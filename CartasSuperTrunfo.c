@@ -44,7 +44,7 @@ int main() {
     printf("PIB: %f\n", pib);
     printf("Número de pontos turísticos: %d", pontos_turisticos);
 
-
+    //Novo commit
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
