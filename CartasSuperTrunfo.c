@@ -9,12 +9,13 @@
 int main() {
     char estado;
     char codigo[20];
-    char nome[20];
+    char nome[50];
     int populacao;
     float area;
     float pib;
     int pontos_turisticos;
-
+    float densidade_populacional;
+    float pib_capita;
     printf("Insira o estado: \n");
     scanf("%c", &estado);
 
@@ -35,6 +36,9 @@ int main() {
 
     printf("Número de pontos turísticos: \n");
     scanf("%d", &pontos_turisticos);
+    
+    densidade_populacional = (float) (populacao / area);
+    pib_capita = (float) (pib / populacao);
 
     printf("Estado: %c\n", estado);
     printf("Código da Carta: %s\n", codigo);
@@ -42,7 +46,10 @@ int main() {
     printf("População: %d\n", populacao);
     printf("Área em km²: %f\n", area);
     printf("PIB: %f\n", pib);
-    printf("Número de pontos turísticos: %d", pontos_turisticos);
+    printf("Número de pontos turísticos: %d\n", pontos_turisticos);
+    printf("Densidade Populacional: %f\n", densidade_populacional);
+    printf("PIB per capita: %f", pib_capita);
+
 
     //Novo commit
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
