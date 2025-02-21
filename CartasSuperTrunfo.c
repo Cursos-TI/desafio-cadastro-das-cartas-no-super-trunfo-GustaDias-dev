@@ -16,7 +16,7 @@ int main() {
     char estado;
     char codigo[20];
     char nome[20];
-    int populacao;
+    unsigned long int populacao;
     float area;
     float pib;
     int pontos;
@@ -35,7 +35,7 @@ int main() {
     printf("Insira o nome da cidade: \n");
     scanf("%s", &nome);
     printf("Insira a população: \n");
-    scanf("%d", &populacao);
+    scanf("%u", &populacao);
     printf("Insira a Área em km²: \n");
     scanf("%f", &area);
     printf("Insira o PIB: \n");
@@ -43,15 +43,12 @@ int main() {
     printf("Insira o número de pontos turísticos: \n");
     scanf("%d", &pontos);
 
-    densidade = (float) (populacao / area);
-    capita = (float) (pib / populacao);
-    poder =  (float) (populacao + area + pib + pontos + densidade + capita);
-
+    
     //CARTA 2
     char estado2;
     char codigo2[20];
     char nome2[20];
-    int populacao2;
+    unsigned long int populacao2;
     float area2;
     float pib2;
     int pontos2;
@@ -70,7 +67,7 @@ int main() {
     printf("Insira o nome da cidade: \n");
     scanf("%s", &nome2);
     printf("Insira a população: \n");
-    scanf("%d", &populacao2);
+    scanf("%u", &populacao2);
     printf("Insira a Área em km²: \n");
     scanf("%f", &area2);
     printf("Insira o PIB: \n");
@@ -78,14 +75,20 @@ int main() {
     printf("Insira o número de pontos turísticos: \n");
     scanf("%d", &pontos2);
 
+    densidade = (float) (populacao / area);
+    capita = (float) (pib / populacao);
+    poder =  (float) (populacao + area + pib + pontos + (-densidade) + capita);
+
+
     densidade2 = (float) (populacao2 / area2);
     capita2 = (float) (pib2 / populacao2);
-    poder2 =  (float) (populacao2 + area2 + pib2 + pontos2 + densidade2 + capita2);
+    poder2 =  (float) (populacao2 + area2 + pib2 + pontos2 + (-densidade2) + capita2);
 
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     
+    printf("Dados da Carta 1: \n");
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", codigo);
     printf("Cidade: %s\n", nome);
@@ -97,6 +100,7 @@ int main() {
     printf("PIB per capita: %f\n", capita);
     printf("Super poder: %f\n ", poder);
 
+    printf("Dados da Carta 2: \n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
     printf("Cidade: %s\n", nome2);
@@ -111,7 +115,7 @@ int main() {
     //COMPARAÇÃO DAS CARTAS
     printf("População: %d\n", populacao > populacao2);
     printf("Área: %d\n", area > area2);
-    printf("PIB: %d\n",pib > pib2);
+    printf("PIB: %d\n", pib > pib2);
     printf("Pontos turísticos: %d\n", pontos > pontos);
     printf("Densidade populacional: %d\n", densidade < densidade2);
     printf("PIB per capita: %d\n", capita > capita2);
